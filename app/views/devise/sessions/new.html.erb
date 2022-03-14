@@ -1,14 +1,22 @@
-<h2>Log in</h2>
+<%= form_for(resource, as: resource_name, data: { turbo: false }, url: session_path(resource_name), html: {class: "login-form"}) do |f| %>
+  <div class="login-header">
+    <a href="/"><i class="fas fa-arrow-left fa-2x"></i></i></a>
+    <h2>LOGIN</h2>
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+  </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: "Email"  %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", required: true, placeholder: "Password"  %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -18,9 +26,7 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div class="forget-password">
+  <%= render "devise/shared/links" %>
+</div>
