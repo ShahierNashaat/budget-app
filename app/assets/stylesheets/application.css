@@ -55,7 +55,8 @@
 .login-form .login-header a,
 .forget-password-form .forget-password-header a,
 .categories-container .categories-header i,
-.transactions-container .transactions-header a {
+.transactions-container .transactions-header a,
+.new-group-form .new-group-header a {
   position: absolute;
   left: 20px;
 }
@@ -76,7 +77,8 @@
 .login-form,
 .forget-password-form,
 .categories-container,
-.transactions-container {
+.transactions-container,
+.new-group-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -86,7 +88,8 @@
 .login-form .login-header,
 .forget-password-form .forget-password-header,
 .categories-container .categories-header,
-.transactions-container .transactions-header {
+.transactions-container .transactions-header,
+.new-group-form .new-group-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,14 +101,16 @@
 
 .sign-up-form .sign-up-header div,
 .login-form .login-header div,
-.forget-password-form .forget-password-header div {
+.forget-password-form .forget-password-header div,
+.new-group-form .new-group-header div {
   position: absolute;
   right: 20px;
 }
 
 .sign-up-form .sign-up-header input[type="submit"],
 .login-form .login-header input[type="submit"],
-.forget-password-form .forget-password-header input[type="submit"] {
+.forget-password-form .forget-password-header input[type="submit"],
+.new-group-form .new-group-header input[type="submit"] {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -115,19 +120,22 @@
 
 .sign-up-form .sign-up-header a i,
 .login-form .login-header a i,
-.forget-password-form .forget-password-header a i {
+.forget-password-form .forget-password-header a i,
+.new-group-form .new-group-header a i {
   color: white;
 }
 
 .sign-up-form .field,
 .login-form .field,
-.forget-password-form .field {
+.forget-password-form .field,
+.new-group-form .field {
   margin: 10px;
 }
 
 .sign-up-form .field input,
 .login-form .field input,
-.forget-password-form .field input {
+.forget-password-form .field input,
+.new-group-form .field input {
   border: none;
   border-bottom: 1px solid var(--third-color);
   width: 100%;
@@ -229,4 +237,12 @@
   border: 0;
   background-color: transparent;
   color: white;
+}
+
+.icon-select {
+  border: none;
+  width: 100%;
+  background-color: #e2dfdf;
+  padding: 20px;
+  font-size: 27px;
 }
