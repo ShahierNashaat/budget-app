@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :groups do
-    resources :payments
-  end
+  resources :groups
+  resources :payments
 
   unauthenticated do
     root "users#welcome"
