@@ -47,10 +47,16 @@
   color: #aaadaf;
 }
 
+.categories-container .categories-header i {
+  cursor: pointer;
+}
+
 .sign-up-form .sign-up-header a,
 .login-form .login-header a,
-.forget-password-form .forget-password-header a {
-  justify-self: flex-start;
+.forget-password-form .forget-password-header a,
+.categories-container .categories-header i {
+  position: absolute;
+  left: 20px;
 }
 
 .welcome-container .links a:first-child {
@@ -58,9 +64,15 @@
   color: white;
 }
 
+.categories-container {
+  position: relative;
+  height: 95vh;
+}
+
 .sign-up-form,
 .login-form,
-.forget-password-form {
+.forget-password-form,
+.categories-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -68,25 +80,22 @@
 
 .sign-up-form .sign-up-header,
 .login-form .login-header,
-.forget-password-form .forget-password-header {
+.forget-password-form .forget-password-header,
+.categories-container .categories-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: var(--main-color);
   padding: 10px 20px;
   color: white;
-}
-
-.sign-up-form .sign-up-header h2,
-.login-form .login-header h2,
-.forget-password-form .forget-password-header h2 {
-  justify-self: center;
+  position: relative;
 }
 
 .sign-up-form .sign-up-header div,
 .login-form .login-header div,
 .forget-password-form .forget-password-header div {
-  justify-self: flex-end;
+  position: absolute;
+  right: 20px;
 }
 
 .sign-up-form .sign-up-header input[type="submit"],
@@ -128,4 +137,73 @@
 .forget-password {
   display: flex;
   justify-content: center;
+}
+
+.categories-container .groups {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 5px;
+  height: 100%;
+}
+
+.categories-container .groups .group-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 10px;
+  border-bottom: 1px solid #c6c6c7;
+}
+
+.categories-container .groups .group-container div {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.categories-container .groups .group-container div img {
+  width: 25%;
+}
+
+.categories-container .groups .group-container p {
+  width: 20%;
+  text-align: center;
+  font-size: 30px;
+  color: var(--third-color);
+  font-weight: bold;
+}
+
+.categories-container .create-new-category {
+  width: 100%;
+  height: 100px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 35px;
+}
+
+.categories-container .menu {
+  position: fixed;
+  height: 100vh;
+  width: 80vw;
+  background-color: black;
+  z-index: 3;
+  margin-left: -83vw;
+  transition: margin 1s;
+}
+
+.categories-container .menu ul {
+  margin-top: 10%;
+}
+
+.categories-container .menu button {
+  width: 100%;
+  font-size: 3em;
+  border: 0;
+  background-color: transparent;
+  color: white;
 }
