@@ -1,24 +1,61 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Budget app
 
-Things you may want to cover:
+> The project is a website that you can create budget categories in it and the transactions for those categories
 
-* Ruby version
+## Built With
 
-* System dependencies
+- HTML & CSS
+- JavaScript
+- Ruby on Rails
+- Rspec
+- OOP
 
-* Configuration
 
-* Database creation
+## Live Link
+[budget-app](https://vast-gorge-07833.herokuapp.com/)
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Getting Started
 
-* Deployment instructions
+To get a local copy up and running follow these simple example steps.
 
-* ...
+- copy this link `https://github.com/ShahierNashaat/Blog.git`.
+- get the directory that you want to clone the repository.
+- open the command prompt in this directory.
+- write `git clone https://github.com/ShahierNashaat/Blog.git`.
+- go to the repository folder in your command prompt.
+- run `bundle install`.
+- run `npm install`
+- create database in your postgre called `Blog_development`
+- run `rails db:migrate`
+- To run the test run `rspec` in your command prompt.
+
+## Author
+
+👤 **Shahier Nashaat**
+
+- GitHub: [@githubhandle](https://github.com/ShahierNashaat)
+- Twitter: [@twitterhandle](https://twitter.com/ShahierN)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahier-nashaat-73519313a/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Ruby on rails
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

@@ -28,7 +28,7 @@
   </div>
 
   <div>
-    <%= form.select :categories, Group.all.collect {|g| [g.name, g.id]}, { include_blank: false }, required: true, class:"categories-select selectpicker", multiple: true %>
+    <%= form.select :categories, Group.where(user_id: current_user.id).collect {|g| [g.name, g.id]}, { include_blank: false }, required: true, class:"categories-select selectpicker", multiple: true %>
   </div>
 
 <% end %>
