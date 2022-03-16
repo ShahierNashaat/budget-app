@@ -23,14 +23,14 @@
 
 To get a local copy up and running follow these simple example steps.
 
-- copy this link `https://github.com/ShahierNashaat/Blog.git`.
+- copy this link `https://github.com/ShahierNashaat/budget-app.git`.
 - get the directory that you want to clone the repository.
 - open the command prompt in this directory.
-- write `git clone https://github.com/ShahierNashaat/Blog.git`.
+- write `git clone https://github.com/ShahierNashaat/budget-app.git`.
 - go to the repository folder in your command prompt.
 - run `bundle install`.
 - run `npm install`
-- create database in your postgre called `Blog_development`
+- To create database run `rails db:create`
 - run `rails db:migrate`
 - To run the test run `rspec` in your command prompt.
 
@@ -55,7 +55,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Ruby on rails
+- Got inspired by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 ## 📝 License
 
