@@ -192,7 +192,7 @@
 .transactions-container .transactions-inner-container .group-container form button {
   background-color: white;
   border-radius: 5px;
-  font-size: 30px;
+  font-size: 1.5em;
   font-weight: bold;
   color: var(--third-color);
   cursor: pointer;
@@ -203,6 +203,7 @@
   display: flex;
   align-items: center;
   width: 50%;
+  gap: 20px;
 }
 
 .categories-container .groups .group-container div img,
@@ -228,7 +229,7 @@
 .transactions-container .transactions-inner-container .payments-container .payment p {
   width: 20%;
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5em;
   color: var(--third-color);
   font-weight: bold;
 }
@@ -285,4 +286,8 @@
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
   width: 100% !important;
   outline: none;
+}
+
+.time {
+  font-weight: lighter;
 }

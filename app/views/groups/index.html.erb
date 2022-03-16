@@ -18,7 +18,7 @@
       <a class="group-container" href="groups/<%= group.id %>">
         <div>
           <%=image_tag "#{group.icon}"%>
-          <p><%= group.name %></p>
+          <p><%= group.name %> <br> <span class="time"><%= Date.strptime(group.created_at.to_datetime.to_s).strftime("%d/%m/%Y") %> </span></p>
         </div>
         <% total_amount = 0.00 %>
         <% group.payment_groups.each do |element| %>

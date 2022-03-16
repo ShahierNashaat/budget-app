@@ -4,7 +4,7 @@ RSpec.describe 'Groups', type: :request do
   include Devise::Test::IntegrationHelpers
 
   let(:user) { User.create(name: 'User1', email: 'Test@mail.com', password: '123456') }
-  let(:group) { user.groups.create!(name: 'shopping', icon: 'img1.png') }
+  let(:group) { user.groups.create!(id: 1, name: 'shopping', icon: 'img1.png') }
 
   describe 'GET /index' do
     before do

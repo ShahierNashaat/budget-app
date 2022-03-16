@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  let(:user) { User.create(name: 'User1', email: 'test@mail.com', password: '123456') }
-  let(:group) { Group.create(name: 'shopping', icon: 'img1.png', user_id: 1) }
+  let(:user) { User.first }
+  let(:group) { user.groups.create(name: 'shopping', icon: 'img1.png') }
 
   describe 'Validations' do
     it 'should be valid' do
