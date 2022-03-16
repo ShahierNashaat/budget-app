@@ -1,46 +1,30 @@
 class PaymentsController < ApplicationController
   before_action :set_payment, only: %i[show edit update destroy]
 
-  # GET /payments or /payments.json
-  def index
-    @payments = Payment.all
-  end
-
-  # GET /payments/1 or /payments/1.json
-  def show; end
-
   # GET /payments/new
   def new
     @payment = Payment.new
   end
 
-  # GET /payments/1/edit
-  def edit; end
-
   # POST /payments or /payments.json
   def create
-    @payment = Payment.new(payment_params)
+    params = payment_params
+    @payment = Payment.new(name: params[:name], amount: params[:amount])
+    @payment.user_id = current_user.id
 
     respond_to do |format|
       if @payment.save
-        format.html { redirect_to payment_url(@payment), notice: 'Payment was successfully created.' }
-        format.json { render :show, status: :created, location: @payment }
+        @categories_ids = params[:categories]
+        @categories_ids.each do |element|
+          next if element == ''
+
+          payment_group = PaymentGroup.new(group_id: element.to_i)
+          payment_group.payment = @payment
+          payment_group.save
+        end
+        format.html { redirect_to groups_url, notice: 'Payment was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /payments/1 or /payments/1.json
-  def update
-    respond_to do |format|
-      if @payment.update(payment_params)
-        format.html { redirect_to payment_url(@payment), notice: 'Payment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @payment }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -64,6 +48,6 @@ class PaymentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def payment_params
-    params.require(:payment).permit(:name, :amount, :user_id)
+    params.require(:payment).permit(:name, :amount, categories: [])
   end
 end

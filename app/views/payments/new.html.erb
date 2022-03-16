@@ -1,9 +1,39 @@
-<h1>New payment</h1>
+<%= form_with(model: @payment, html: {class: "new-payment-form"}) do |form| %>
+  <div class="new-payment-header">
+    <a href="/"><i class="fas fa-arrow-left fa-2x"></i></a>
+    <h2>NEW CATEGORY</h2>
+    <div class="actions">
+      <%= form.submit "Create" %>
+    </div>
+  </div>
+  
+  <% if @payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
 
-<%= render "form", payment: @payment %>
+      <ul>
+        <% @payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<br>
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Name", required: true  %>
+  </div>
 
-<div>
-  <%= link_to "Back to payments", payments_path %>
-</div>
+  <div class="field">
+    <%= form.number_field :amount, placeholder: "Amount", required: true, step: 0.01  %>
+  </div>
+
+  <div>
+    <%= form.select :categories, Group.all.collect {|g| [g.name, g.id]}, { include_blank: false }, required: true, class:"categories-select selectpicker", multiple: true %>
+  </div>
+
+<% end %>
+
+<script>
+  $('select').selectpicker();
+  $('.filter-option-inner-inner').text('Select at least one category')
+</script>
