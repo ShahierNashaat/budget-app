@@ -19,6 +19,7 @@
         <% total_amount += element.payment.amount %>
       <% end %>
       <p>Total: $<%= total_amount %></p>
+      <%= button_to "Delete", group_path(@group), :method => :delete %>
     </div>
 
     <h3>Transactions</h3>
@@ -28,6 +29,7 @@
         <div class="payment">
           <p><%= element.payment.name %></p>
           <p>$<%= element.payment.amount %></p>
+          <%= button_to "Delete", payment_path(element.payment), :method => :delete %>
         </div>
       <% end %>
     </div>

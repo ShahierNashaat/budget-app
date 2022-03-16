@@ -47,10 +47,6 @@
   color: #aaadaf;
 }
 
-.categories-container .categories-header i {
-  cursor: pointer;
-}
-
 .sign-up-form .sign-up-header a,
 .login-form .login-header a,
 .forget-password-form .forget-password-header a,
@@ -60,6 +56,7 @@
 .new-payment-form .new-payment-header a {
   position: absolute;
   left: 20px;
+  cursor: pointer;
 }
 
 .transactions-container .transactions-header a,
@@ -180,6 +177,27 @@
   border-bottom: 1px solid #c6c6c7;
 }
 
+.transactions-container .transactions-inner-container .group-container form {
+  margin-right: 5%;
+}
+
+.categories-container .menu button {
+  width: 100%;
+  font-size: 3em;
+  border: 0;
+  background-color: transparent;
+  color: white;
+}
+
+.transactions-container .transactions-inner-container .group-container form button {
+  background-color: white;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--third-color);
+  cursor: pointer;
+}
+
 .categories-container .groups .group-container div,
 .transactions-container .transactions-inner-container .group-container div {
   display: flex;
@@ -190,6 +208,19 @@
 .categories-container .groups .group-container div img,
 .transactions-container .transactions-inner-container .group-container div img {
   width: 25%;
+}
+
+.transactions-container .transactions-inner-container .payments-container .payment form {
+  margin-right: 5%;
+}
+
+.transactions-container .transactions-inner-container .payments-container .payment form button {
+  background-color: white;
+  border-radius: 5px;
+  color: var(--third-color);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .categories-container .groups .group-container p,
@@ -204,6 +235,10 @@
 
 .transactions-container .transactions-inner-container .payments-container .payment p {
   font-size: 20px;
+}
+
+.transactions-container .transactions-inner-container .payments-container .payment p:first-child {
+  width: 50%;
 }
 
 .transactions-container .transactions-inner-container h3 {
@@ -237,14 +272,6 @@
 
 .categories-container .menu ul {
   margin-top: 10%;
-}
-
-.categories-container .menu button {
-  width: 100%;
-  font-size: 3em;
-  border: 0;
-  background-color: transparent;
-  color: white;
 }
 
 .icon-select {

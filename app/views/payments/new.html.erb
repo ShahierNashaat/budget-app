@@ -1,6 +1,6 @@
 <%= form_with(model: @payment, html: {class: "new-payment-form"}) do |form| %>
   <div class="new-payment-header">
-    <a href="/"><i class="fas fa-arrow-left fa-2x"></i></a>
+    <a onclick="history.back()"><i class="fas fa-arrow-left fa-2x"></i></a>
     <h2>NEW CATEGORY</h2>
     <div class="actions">
       <%= form.submit "Create" %>
