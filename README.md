@@ -16,7 +16,8 @@
 ## Live Link
 [budget-app](https://vast-gorge-07833.herokuapp.com/)
 
-
+## Video
+[video](https://www.loom.com/share/c47407c2c69d4167944988a311e6503c)
 
 ## Getting Started
 
