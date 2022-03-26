@@ -2,7 +2,9 @@
 
 # Budget app
 
-> The project is a website that you can create budget categories in it and the transactions for those categories
+> The project is a website that you can create budget categories in it and the transactions for those categories.
+
+![screenshot](./app/assets/images/Screenshot.png)
 
 ## Built With
 
